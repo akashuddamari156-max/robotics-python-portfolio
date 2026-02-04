@@ -1,0 +1,16 @@
+n = int(input("ENter number of readings: "))
+k = int(input("enter window size k: "))
+
+readings = []
+for i in range(n):
+    value = float(input(f"Enter reading{i+1}:"))
+    readings.append(value)
+
+smooth = []
+for i in range(n-k+1):
+    window = readings[i:i+k]
+    avg = sum(window)/k
+    smooth.append(avg)
+
+print(f"Readings: {readings}")
+print(f"average is:  {smooth}")
